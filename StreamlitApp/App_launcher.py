@@ -23,6 +23,7 @@ pages = [
      st.Page("Pages\\Home.py", icon="🌱", default=True, title="Il tuo Orto"),
      st.Page("Pages\\Diary.py", icon="🖊️", title="Diario"),
      st.Page("Pages\\Dataset.py", icon="🧮", title="Dataset"),
+     st.Page("Pages\\Purchase.py", icon="💰", title="Acquisti"),
 ]
 
 nav = st.navigation(pages, position="sidebar")

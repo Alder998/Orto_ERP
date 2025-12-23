@@ -18,5 +18,7 @@ def userGetter(fileType):
 
     if fileType == "master_file":
         return readUserJSON()["master_file"]
+    elif fileType == "acquisti":
+        return readUserJSON()["master_file_acquisti"]
     else:
         raise Exception ("ERROR! File type not found!")
