@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5fafe37-4342-4ca3-97a3-65923a091bf3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/StreamlitApp/App_launcher.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StreamlitApp/ExcelService/ExcelDataService.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StreamlitApp/ExcelService/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Dataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Diary.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Home.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/UserService.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Orto_ERP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Orto_ERP.iml" afterDir="false" />
+    <list default="true" id="f5fafe37-4342-4ca3-97a3-65923a091bf3" name="Changes" comment="0.1: first application setup before functional Requirement">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamlitApp/ExcelService/ExcelDataService.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/ExcelService/ExcelDataService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Diary.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Diary.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Home.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +132,19 @@
       <option name="presentableId" value="Default" />
       <updated>1766353187495</updated>
     </task>
+    <task id="LOCAL-00001" summary="0.1: first application setup before functional Requirement">
+      <option name="closed" value="true" />
+      <created>1766400566310</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1766400566310</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="0.1: first application setup before functional Requirement" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.1: first application setup before functional Requirement" />
   </component>
 </project>

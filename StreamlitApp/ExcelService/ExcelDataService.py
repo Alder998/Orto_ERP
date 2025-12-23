@@ -16,7 +16,8 @@ class ExcelDataService:
 
         # Process the data from dict to dataFrame row
         data = pd.DataFrame([data])
-        print(data)
+        # Remove Emoji
+        data["Attività"] = data["Attività"].str.replace(" ⛏️", "").str.replace(" 💩", "").str.replace(" 👻", "").str.replace(" 💦", "").str.replace(" 🧪", "").str.replace(" 🔰","").str.replace(" 🚜", "").str.replace(" 🍎", "").str.replace(" 🫘", "").str.replace(" 🌱", "")
 
         # load the data
         existing_data = pd.read_excel(user.userGetter(fileType="master_file"))
@@ -34,6 +35,8 @@ class ExcelDataService:
 
         # Save to the existing dir
         new_data.to_excel(user.userGetter(fileType="master_file"), index=False)
+        # Save a copy for backup
+        new_data.to_excel(user.userGetter(fileType="master_file").replace(".xlsx", "") + "_backup.xlsx", index=False)
 
         return new_data
 
@@ -51,8 +54,3 @@ class ExcelDataService:
         new_data.to_excel(user.userGetter(fileType="master_file"), index=False)
 
         return new_data
-
-
-
-
-

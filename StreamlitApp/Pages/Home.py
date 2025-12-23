@@ -10,3 +10,7 @@ st.subheader("\nLa tua ultima attività")
 data = excel.ExcelDataService().getExcelData()[["Data","Attività","Prodotto","Quantità","Peso","Tempo atmosferico","Note"]]
 data_last = data[data["Data"] == data["Data"].max()].reset_index(drop=True)
 st.dataframe(data_last, width='stretch')
+
+# Organize dashboard for activities
+
+
