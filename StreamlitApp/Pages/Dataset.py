@@ -34,6 +34,5 @@ if st.button("❌ Elimina riga selezionata"):
         excel.ExcelDataService().deleteExcelRow(row_id)
         st.session_state.data_filtered = data_filtered.drop(selected_idx).reset_index(drop=True)
         st.rerun()
-        #st.success(f"attività {selected_idx} eliminata ✅")
     except Exception as e:
         st.error(f"Errore: {e}")

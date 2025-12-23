@@ -39,7 +39,7 @@ chart = (
         tooltip=["Attività", "Data"]
     )
 )
-st.altair_chart(chart, use_container_width=True)
+st.altair_chart(chart)
 
 # Organize dashboard graphs for product planted and harvested
 st.subheader("\n\n\nI tuoi prodotti")
@@ -85,4 +85,4 @@ line_left = (
 # Layer con scale indipendenti
 chart = alt.layer(line_left, line_right).resolve_scale(y="independent")
 
-st.altair_chart(chart, use_container_width=True)
+st.altair_chart(chart)
