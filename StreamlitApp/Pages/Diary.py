@@ -25,14 +25,14 @@ prod_chimico = None
 
 # populate variables
 if (att == "Raccogliere 🍎") | (att == "Seminare 🫘") | (att == "Piantare 🌱"):
-    prod = st.selectbox(label = "Prodotto", options=df["Prodotto"].unique(), accept_new_options=True)
+    prod = st.selectbox(label = "Prodotto", options=df["Prodotto"].dropna().unique(), accept_new_options=True)
     quantita = st.number_input("Quantità (pz)", min_value=0, step=1)
     peso = st.number_input("Peso (kg)", min_value=0.0, step=0.1, format="%.2f")
     prezzo = st.number_input("Prezzo (€)", min_value=0.0, step=0.1, format="%.2f")
 elif att == "Concimare 💩":
-    prod_chimico = st.selectbox(label = "Prodotto chimico utilizzato", options=df["Prodotto chimico"].unique(), accept_new_options=True)
+    prod_chimico = st.selectbox(label = "Prodotto chimico utilizzato", options=df[df["Attività"]=="Concimare"]["Prodotto chimico"].dropna().unique(), accept_new_options=True)
 elif att == "Trattamenti 🧪":
-    prod_chimico = st.selectbox(label = "Prodotto chimico utilizzato", options=df["Prodotto chimico"].unique(), accept_new_options=True)
+    prod_chimico = st.selectbox(label = "Prodotto chimico utilizzato", options=df[df["Attività"]=="Trattamenti"]["Prodotto chimico"].dropna().unique(), accept_new_options=True)
     prod = st.selectbox(label = "Prodotto", options=df["Prodotto"].unique(), accept_new_options=True)
     prezzo = st.number_input("Prezzo (€) del trattamento", min_value=0.0, step=0.1, format="%.2f")
 
