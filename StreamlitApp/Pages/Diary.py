@@ -22,6 +22,7 @@ quantita = None
 peso = None
 prezzo = None
 prod_chimico = None
+acqua_utilizzata = None
 
 # populate variables
 if (att == "Raccogliere 🍎") | (att == "Seminare 🫘") | (att == "Piantare 🌱"):
@@ -31,10 +32,13 @@ if (att == "Raccogliere 🍎") | (att == "Seminare 🫘") | (att == "Piantare �
     prezzo = st.number_input("Prezzo (€)", min_value=0.0, step=0.1, format="%.2f")
 elif att == "Concimare 💩":
     prod_chimico = st.selectbox(label = "Prodotto chimico utilizzato", options=df[df["Attività"]=="Concimare"]["Prodotto chimico"].dropna().unique(), accept_new_options=True)
+    prezzo = st.number_input("Prezzo (€) del prodotto", min_value=0.0, step=0.1, format="%.2f")
 elif att == "Trattamenti 🧪":
     prod_chimico = st.selectbox(label = "Prodotto chimico utilizzato", options=df[df["Attività"]=="Trattamenti"]["Prodotto chimico"].dropna().unique(), accept_new_options=True)
     prod = st.selectbox(label = "Prodotto", options=df["Prodotto"].unique(), accept_new_options=True)
     prezzo = st.number_input("Prezzo (€) del trattamento", min_value=0.0, step=0.1, format="%.2f")
+elif att == "Irrigazione 💦":
+    acqua_utilizzata = st.number_input("Acqua utilizzata (l)", min_value=0.0, step=0.1, format="%.2f")
 
 tempo = st.selectbox(label = "Tempo Atmosferico", options=["Sereno", "nuvole sparse", "nuvoloso", "pioggia"])
 note = st.text_area("Note", height=50)
@@ -49,6 +53,7 @@ if st.button("💾 Salva"):
         "Peso": peso,
         "Prezzo": prezzo,
         "Prodotto chimico": prod_chimico,
+        "Acqua utilizzata": acqua_utilizzata,
         "Tempo atmosferico": tempo,
         "Note": note,
     }

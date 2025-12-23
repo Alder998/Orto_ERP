@@ -17,9 +17,11 @@ data_filtered = data[data["Attività"] == attivita_no_emoji]
 if (att == "Raccogliere 🍎") | (att == "Seminare 🫘") | (att == "Piantare 🌱"):
     data_filtered = data_filtered[["id_activity", "Data","Attività","Prodotto","Quantità","Peso","Prezzo","Tempo atmosferico","Note"]]
 elif (att == "Concimare 💩"):
-    data_filtered = data_filtered[["id_activity","Data","Attività","Prodotto chimico","Tempo atmosferico","Note"]]
+    data_filtered = data_filtered[["id_activity","Data","Attività","Prodotto chimico","Prezzo","Tempo atmosferico","Note"]]
 elif (att == "Trattamenti 🧪"):
     data_filtered = data_filtered[["id_activity","Data","Attività","Prodotto","Prodotto chimico","Prezzo","Tempo atmosferico","Note"]]
+elif (att == "Irrigazione 💦"):
+    data_filtered = data_filtered[["id_activity","Data","Attività", "Acqua utilizzata", "Tempo atmosferico","Note"]]
 else:
     data_filtered = data_filtered[["id_activity","Data","Attività","Tempo atmosferico","Note"]]
 
