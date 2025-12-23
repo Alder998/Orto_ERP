@@ -75,10 +75,10 @@ line_left = (
         x="Data:T",
         y=alt.Y(
             "Prezzo:Q",
-            title="Prezzo (seminato + piantato)",
+            title="Prezzo € (seminato + piantato)",
             axis=alt.Axis(orient="left")
         ),
-        tooltip=["Data:T", "Peso:Q"]
+        tooltip=["Data:T", "Prezzo:Q"]
     )
 )
 

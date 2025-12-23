@@ -1,11 +1,15 @@
 """Class to get the user path for Excel file"""
 
 import json
+from pathlib import Path
 
 # Function to read the user file
 def readUserJSON ():
 
-    with open("D:\\PythonProjects-Storage\\Orto_ERP\\UserService\\User_files.json", "r") as json_file:
+    base_dir = Path(__file__).resolve().parent
+    json_path = base_dir / "User_files.json"
+
+    with open(json_path, "r") as json_file:
         data = json.load(json_file)
 
     return data

@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5fafe37-4342-4ca3-97a3-65923a091bf3" name="Changes" comment="0.2: full implementation of update and delete of rows of Excel file + some new features + graphs in the making">
+    <list default="true" id="f5fafe37-4342-4ca3-97a3-65923a091bf3" name="Changes" comment="0.3: Almost full graph and interactivity implemented">
+      <change afterPath="$PROJECT_DIR$/Orto_app_launcher.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Diary.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Diary.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/UserService.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserService.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,38 +26,38 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Alder998"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Alder998&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Alder998/Orto_ERP.git",
-    "accountId": "adde1448-9347-4c75-a099-0c7157ca178d"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Alder998/Orto_ERP.git&quot;,
+    &quot;accountId&quot;: &quot;adde1448-9347-4c75-a099-0c7157ca178d&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="37AkJ5GDj95cfEhQuLDS98QJAzu" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.App_launcher.executor": "Run",
-    "Python.Dataset.executor": "Run",
-    "Python.ExcelDataService.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.App_launcher.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Dataset.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ExcelDataService.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\PythonProjects-Storage\Orto_ERP\StreamlitApp" />
@@ -146,12 +148,21 @@
       <option name="project" value="LOCAL" />
       <updated>1766482268597</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="0.3: Almost full graph and interactivity implemented">
+      <option name="closed" value="true" />
+      <created>1766487860288</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1766487860288</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="0.1: first application setup before functional Requirement" />
     <MESSAGE value="0.2: full implementation of update and delete of rows of Excel file + some new features + graphs in the making" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.2: full implementation of update and delete of rows of Excel file + some new features + graphs in the making" />
+    <MESSAGE value="0.3: Almost full graph and interactivity implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.3: Almost full graph and interactivity implemented" />
   </component>
 </project>
