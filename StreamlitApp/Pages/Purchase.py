@@ -14,7 +14,7 @@ att = st.selectbox(label = "Attività", options=["Zappare ⛏️", "Concimare �
                                                 "Trattamenti 🧪", "Protezioni e reti 🔰", "Taglio erba 🚜",
                                                 "Seminare 🫘","Piantare 🌱"])
 
-# Initialize
+# Initialize all objects
 prod = None
 peso = None
 prezzo = None
