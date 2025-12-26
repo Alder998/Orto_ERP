@@ -7,7 +7,8 @@ st.title("Il tuo diario 🖊️")
 st.subheader("Aggiungi le tue attività")
 
 # Load data for options
-df = excel.ExcelDataService().getExcelData()[["id_activity", "Data","Attività","Prodotto","Quantità","Peso", "Prodotto chimico","Tempo atmosferico","Note"]]
+df_att = excel.ExcelDataService(fileType="attivita").getExcelData()
+df_produzione = excel.ExcelDataService(fileType="produzione").getExcelData()
 
 # Add all the selectBox
 data = st.date_input("Data",value=date.today())
@@ -20,6 +21,11 @@ att = st.selectbox(label = "Attività", options=["Preparazione Terreno ⛏️", 
 settore = None
 mq = None
 tempo = None
+att1 = None
+att2 = None
+att3 = None
+att4 = None
+att5 = None
 
 prod = None
 quantita = None
@@ -42,16 +48,16 @@ if att == "Preparazione Terreno ⛏️":
 
 elif (att == "Seminare 🫘") | (att == "Piantare 🌱"):
     settore = st.number_input("Settore Orto (numero)", min_value=0, step=1)
-    prod = st.selectbox(label = "Prodotto", options=df["Prodotto"].dropna().unique(), accept_new_options=True)
+    prod = st.selectbox(label = "Prodotto", options=df_produzione["Prodotto"].dropna().unique(), accept_new_options=True)
     quantita = st.number_input("Quantità (pz)", min_value=0, step=1)
 elif att == "Raccogliere 🍎":
     settore = st.number_input("Settore Orto (numero)", min_value=0, step=1)
-    prod = st.selectbox(label = "Prodotto", options=df["Prodotto"].dropna().unique(), accept_new_options=True)
+    prod = st.selectbox(label = "Prodotto", options=df_produzione["Prodotto"].dropna().unique(), accept_new_options=True)
     peso = st.number_input("Peso (kg)", min_value=0.0, step=0.1, format="%.2f")
 elif att == "Trattamenti 🧪":
     settore = st.number_input("Settore Orto (numero)", min_value=0, step=1)
-    prod_chimico = st.selectbox(label = "Prodotto chimico utilizzato", options=df[df["Attività"]=="Trattamenti"]["Prodotto chimico"].dropna().unique(), accept_new_options=True)
-    prod = st.selectbox(label = "Prodotto", options=df["Prodotto"].unique(), accept_new_options=True)
+    prod_chimico = st.selectbox(label = "Prodotto chimico utilizzato", options=df_produzione[df_produzione["Attività"]=="Trattamenti"]["Prodotto chimico"].dropna().unique(), accept_new_options=True)
+    prod = st.selectbox(label = "Prodotto", options=df_produzione["Prodotto"].unique(), accept_new_options=True)
     tempo = st.number_input("Tempo impiegato (ore)", min_value=0.0, step=0.1, format="%.1f")
     #prezzo = st.number_input("Prezzo (€) del trattamento", min_value=0.0, step=0.1, format="%.2f")
 elif att == "Rincalzatura 🚜":
@@ -63,20 +69,44 @@ note = st.text_area("Note", height=50)
 
 # Save module
 if st.button("💾 Salva"):
-    dati = {
-        "Data": data,
-        "Attività": att,
-        "Prodotto": prod,
-        "Quantità": quantita,
-        "Peso": peso,
-        "Prezzo": prezzo,
-        "Prodotto chimico": prod_chimico,
-        "Acqua utilizzata": acqua_utilizzata,
-        "Tempo atmosferico": tempo,
-        "Note": note,
-    }
-    try:
-        excel.ExcelDataService().updateExcelData(dati)
-        st.success("Dati salvati correttamente ✅")
-    except Exception as e:
-        st.error(f"Errore durante il salvataggio: {e}")
+    if (att == "Preparazione Terreno ⛏️") | (att == "Irrigazione 💦") | (att == "Rincalzatura 🚜"):
+        dati = {
+            "Data": data,
+            "Attività": att,
+            "Settore Orto": settore,
+
+            "mq": mq,
+            "tempo impiegato": tempo,
+            "Zappare": att1,
+            "Concimare": att2,
+            "Paciamatura": att3,
+            "Protezione e reti": att4,
+            "Taglio Erba": att5,
+
+            "Tempo atmosferico": tempo,
+            "Note": note,
+        }
+        try:
+            excel.ExcelDataService(fileType="attivita").updateExcelData(dati)
+            st.success("Dati salvati correttamente nel dataset attività ✅")
+        except Exception as e:
+            st.error(f"Errore durante il salvataggio: {e}")
+    if (att == "Seminare 🫘") | (att == "Piantare 🌱") | (att == "Raccogliere 🍎") | (att == "Trattamenti 🧪"):
+        dati = {
+            "Data": data,
+            "Attività": att,
+            "Settore Orto": settore,
+
+            "Prodotto": prod,
+            "Quantità": quantita,
+            "Peso": peso,
+            "Prodotto chimico": prod_chimico,
+
+            "Tempo atmosferico": tempo,
+            "Note": note,
+        }
+        try:
+            excel.ExcelDataService(fileType="produzione").updateExcelData(dati)
+            st.success("Dati salvati correttamente nel dataset produzione ✅")
+        except Exception as e:
+            st.error(f"Errore durante il salvataggio: {e}")

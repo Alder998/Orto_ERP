@@ -15,10 +15,11 @@ def readUserJSON ():
     return data
 
 def userGetter(fileType):
-
-    if fileType == "master_file":
-        return readUserJSON()["master_file"]
+    if fileType == "attivita":
+        return readUserJSON()["attivita"]
     elif fileType == "acquisti":
-        return readUserJSON()["master_file_acquisti"]
+        return readUserJSON()["acquisti"]
+    elif fileType == "produzione":
+        return readUserJSON()["produzione"]
     else:
         raise Exception ("ERROR! File type not found!")
