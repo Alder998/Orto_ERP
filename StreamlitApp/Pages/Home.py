@@ -10,7 +10,7 @@ st.title("Ciao Guido 🌱")
 st.subheader("I tuoi dati e le tue attività")
 
 st.subheader("\nLa tua ultima attività")
-data = excel.ExcelDataService().getExcelData()
+data = excel.ExcelDataService(fileType="attivita").getExcelData()
 data["Data"] = pd.to_datetime(data["Data"], unit="ms")
 
 # Create data_last
@@ -21,6 +21,8 @@ data_last = data_last[data["Data"] == data_last["Data"].max()].reset_index(drop=
 st.dataframe(data_last, width='stretch')
 
 # Organize dashboard graphs for activities
+data_prod = excel.ExcelDataService(fileType="produzione").getExcelData()
+
 st.subheader("\n\n\nLe tue attività per data")
 options = list(data["Data"].dt.strftime("%Y-%m").unique())
 options.insert(0, "tutte le date")
@@ -43,8 +45,8 @@ st.altair_chart(chart)
 
 # Organize dashboard graphs for product planted and harvested
 st.subheader("\n\n\nI tuoi prodotti")
-opt_prod = st.selectbox(label = "Seleziona una coltivazione", options=data["Prodotto"].dropna().unique())
-data_line_chart = copy.deepcopy(data)
+opt_prod = st.selectbox(label = "Seleziona una coltivazione", options=data_prod["Prodotto"].dropna().unique())
+data_line_chart = copy.deepcopy(data_prod)
 data_line_chart = data_line_chart[data_line_chart["Prodotto"] == opt_prod]
 
 # Harvesting chart
@@ -53,8 +55,8 @@ data_line_chart_raccolta["Peso"] = data_line_chart_raccolta["Peso"].cumsum()
 
 # Planting  and seeding chart
 data_line_chart_sem_pianta = data_line_chart[data_line_chart["Attività"].isin(["Seminare","Piantare"])]
-data_line_chart_sem_pianta["Prezzo"] = -data_line_chart_sem_pianta["Prezzo"]
-data_line_chart_sem_pianta["Prezzo"] = data_line_chart_sem_pianta["Prezzo"].cumsum()
+data_line_chart_sem_pianta["Quantità"] = -data_line_chart_sem_pianta["Quantità"]
+data_line_chart_sem_pianta["Quantità"] = data_line_chart_sem_pianta["Quantità"].cumsum()
 
 # Prima linea (asse sinistro)
 line_right = (
@@ -74,11 +76,11 @@ line_left = (
     .encode(
         x="Data:T",
         y=alt.Y(
-            "Prezzo:Q",
-            title="Prezzo € (seminato + piantato)",
+            "Quantità:Q",
+            title="Pz (seminato + piantato)",
             axis=alt.Axis(orient="left")
         ),
-        tooltip=["Data:T", "Prezzo:Q"]
+        tooltip=["Data:T", "Quantità:Q"]
     )
 )
 

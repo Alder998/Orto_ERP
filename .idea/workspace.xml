@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5fafe37-4342-4ca3-97a3-65923a091bf3" name="Changes" comment="0.9: front-end refinements after functional definition (still needs to be implemented the data part)">
+    <list default="true" id="f5fafe37-4342-4ca3-97a3-65923a091bf3" name="Changes" comment="1.0: saving and updating Excel file successfully implemented and tested on activities and productions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Orto_app_launcher.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Orto_app_launcher.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamlitApp/ExcelService/ExcelDataService.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/ExcelService/ExcelDataService.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Diary.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Diary.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserService.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Purchase.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Purchase.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766694986427</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="1.0: saving and updating Excel file successfully implemented and tested on activities and productions">
+      <option name="closed" value="true" />
+      <created>1766740809077</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1766740809077</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -219,6 +226,7 @@
     <MESSAGE value="0.7: added openpyxl to requirements file" />
     <MESSAGE value="0.8: added purchases part" />
     <MESSAGE value="0.9: front-end refinements after functional definition (still needs to be implemented the data part)" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.9: front-end refinements after functional definition (still needs to be implemented the data part)" />
+    <MESSAGE value="1.0: saving and updating Excel file successfully implemented and tested on activities and productions" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0: saving and updating Excel file successfully implemented and tested on activities and productions" />
   </component>
 </project>
