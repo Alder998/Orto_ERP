@@ -2,6 +2,7 @@ import sys
 import os
 import streamlit as st
 from pathlib import Path
+import signal
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -27,4 +28,10 @@ pages = [
 ]
 
 nav = st.navigation(pages, position="sidebar")
+
+# Close botton
+if st.sidebar.button("❌ Chiudi applicazione"):
+    st.warning("Chiusura applicazione...")
+    os.kill(os.getpid(), signal.SIGTERM)
+
 nav.run()

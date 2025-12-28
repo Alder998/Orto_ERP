@@ -86,5 +86,29 @@ line_left = (
 
 # Layer con scale indipendenti
 chart = alt.layer(line_left, line_right).resolve_scale(y="independent")
+st.altair_chart(chart)
 
+# Add purchases and expenses graph
+st.subheader("\n\n\nI tuoi acquisti per data")
+
+data_purch = excel.ExcelDataService(fileType="acquisti").getExcelData()
+data_purch["Prezzo"] = -data_purch["Prezzo"]
+
+options = list(data_purch["Data"].dt.strftime("%Y-%m").unique())
+options.insert(0, "tutte le date")
+opt_att = st.selectbox(label = "Seleziona mese", options=options)
+if opt_att != "tutte le date":
+    data_purch_filtered = data_purch[pd.to_datetime(data_purch["Data"]).dt.strftime("%Y-%m") == opt_att]
+else:
+    data_purch_filtered = data_purch
+chart = (
+    alt.Chart(data_purch_filtered)
+    .mark_bar()
+    .encode(
+        x="Data:T",
+        y=alt.Y("sum(Prezzo):Q", title="Spesa (€)"),
+        color="Attività:N",
+        tooltip=["Prezzo", "Data", "Note"]
+    )
+)
 st.altair_chart(chart)

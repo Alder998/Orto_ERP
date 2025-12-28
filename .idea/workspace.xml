@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5fafe37-4342-4ca3-97a3-65923a091bf3" name="Changes" comment="1.1: adding the multichoice on purchases' front-end part (saving is still to be implemented)">
+    <list default="true" id="f5fafe37-4342-4ca3-97a3-65923a091bf3" name="Changes" comment="1.2: added the saving module for the purchase part (and successfully tested)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Orto_app_launcher.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Orto_app_launcher.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamlitApp/ExcelService/ExcelDataService.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/ExcelService/ExcelDataService.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Purchase.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Purchase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamlitApp/App_launcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/App_launcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Home.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766856689313</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="1.2: added the saving module for the purchase part (and successfully tested)">
+      <option name="closed" value="true" />
+      <created>1766930040093</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1766930040093</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -235,6 +243,7 @@
     <MESSAGE value="0.9: front-end refinements after functional definition (still needs to be implemented the data part)" />
     <MESSAGE value="1.0: saving and updating Excel file successfully implemented and tested on activities and productions" />
     <MESSAGE value="1.1: adding the multichoice on purchases' front-end part (saving is still to be implemented)" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.1: adding the multichoice on purchases' front-end part (saving is still to be implemented)" />
+    <MESSAGE value="1.2: added the saving module for the purchase part (and successfully tested)" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.2: added the saving module for the purchase part (and successfully tested)" />
   </component>
 </project>
