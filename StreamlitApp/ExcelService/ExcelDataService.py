@@ -31,8 +31,8 @@ class ExcelDataService:
         # append the data to the existing table, save it
         new_data = pd.concat([existing_data, data], axis=0)
 
-        # sort by date
-        #new_data = new_data.sort_values(by="Data", ascending=False)
+        # convert to datetime
+        new_data["Data"] = pd.to_datetime(new_data["Data"])
 
         # Save to the existing dir
         new_data.to_excel(user.userGetter(fileType=self.fileType), index=False)

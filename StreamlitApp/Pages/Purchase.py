@@ -16,34 +16,11 @@ fornitore = st.text_input("Fornitore")
 st.divider()
 
 # Initialize all objects
-#prod = None
-#peso = None
-#prezzo = None
-#prod_chimico = None
-
-# populate variables
-#if (att == "Seminare 🫘") | (att == "Piantare 🌱"):
-#    prod = st.selectbox(label = "Prodotto", options=df["Prodotto"].dropna().unique(), accept_new_options=True)
-#    peso = st.number_input("Peso (kg)", min_value=0.0, step=0.1, format="%.2f")
-
-#prezzo = st.number_input("Prezzo (€)", min_value=0.0, step=0.1, format="%.2f")
-#note = st.text_area("Note", height=50)
-#
-#if st.button("💾 Salva"):
-#    dati = {
-#        "Data": data,
-#        "Attività": att,
-#        "Prodotto": prod,
-#        "Peso": peso,
-#        "Prezzo": prezzo,
-#        "Prodotto chimico": prod_chimico,
-#        "Note": note,
-#    }
-#    try:
-#        excel.ExcelDataService(fileType="acquisti").updateExcelData(dati)
-#        st.success("Dati salvati correttamente nel dataset acquisti ✅")
-#    except Exception as e:
-#        st.error(f"Errore durante il salvataggio: {e}")
+att = None
+note = None
+prezzo = None
+prod = None
+quant = None
 
 # Initialize session state
 if "rows" not in st.session_state:
@@ -57,6 +34,7 @@ if st.button("➕ Aggiungi Acquisto"):
         {"Attività": "", "Note": "", "Prezzo": "", "Prodotto": "", "Quantita": ""}
     )
 
+multiple_rows = []
 for i, row in enumerate(st.session_state.rows):
     att, note, prezzo, prod, quant = st.columns(5)
 
@@ -76,7 +54,28 @@ for i, row in enumerate(st.session_state.rows):
         if (row["Attività"] == "Seminare 🫘") | (row["Attività"] == "Piantare 🌱"):
             row["Quantita"] = st.number_input(f"Quantità (pz) {i+1}", min_value=0, step=1)
 
+    # Append Rows to the list
+    multiple_rows.append(row)
     # remove row
     if st.button(f"❌ Rimuovi Acquisto {i + 1}"):
         st.session_state.rows.pop(i)
         st.rerun()
+
+# Save module
+if st.button("💾 Salva Tutti gli acquisti"):
+    for i, srow in enumerate(multiple_rows):
+        dati = {
+            "Data": data,
+            "Attività": srow["Attività"],
+            "Fornitore": fornitore,
+            "Prodotto": srow["Prodotto"],
+            "Quantità": srow["Quantita"],
+            "Prezzo": srow["Prezzo"],
+            "Note": srow["Note"],
+        }
+        try:
+            excel.ExcelDataService(fileType="acquisti").updateExcelData(dati)
+            if i == 0:
+                st.success("Tutti i dati salvati correttamente nel dataset acquisti ✅")
+        except Exception as e:
+            st.error(f"Errore durante il salvataggio: {e}")

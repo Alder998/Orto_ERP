@@ -46,6 +46,7 @@ st.subheader("Consulta i tuoi dati di Attività ⛏️")
 
 # Add dataset
 data = excel.ExcelDataService(fileType="attivita").getExcelData()
+data["Data"] = pd.to_datetime(data["Data"]).dt.strftime("%d/%m/%Y")
 att = st.selectbox(label = "Seleziona una attività", options=["Preparazione Terreno ⛏️", "Irrigazione 💦", "Rincalzatura 🚜"])
 
 attivita_no_emoji = att.replace(" ⛏️", "").replace(" 💩", "").replace(" 👻", "").replace(" 💦", "").replace(" 🧪", "").replace(" 🔰", "").replace(" 🚜", "").replace(" 🍎", "").replace(" 🫘", "").replace(" 🌱", "")
@@ -81,18 +82,19 @@ st.subheader("Consulta i tuoi dati di Acquisto 💰")
 
 # Add dataset
 data = excel.ExcelDataService(fileType="acquisti").getExcelData()
-att = st.selectbox(label = "Seleziona una attività", options=["Preparazione Terreno ⛏️", "Irrigazione 💦",
-                                                              "Rincalzatura 🚜", "Trattamenti 🧪","Seminare 🫘","Piantare 🌱", "Raccogliere 🍎"])
+data["Data"] = pd.to_datetime(data["Data"]).dt.strftime("%d/%m/%Y")
+att = st.selectbox(label = "Seleziona una attività", options=["Preparazione Terreno ⛏️",
+                                                              "Rincalzatura 🚜", "Trattamenti 🧪","Seminare 🫘","Piantare 🌱"])
 
 attivita_no_emoji = att.replace(" ⛏️", "").replace(" 💩", "").replace(" 👻", "").replace(" 💦", "").replace(" 🧪", "").replace(" 🔰", "").replace(" 🚜", "").replace(" 🍎", "").replace(" 🫘", "").replace(" 🌱", "")
 data_filtered = data[data["Attività"] == attivita_no_emoji]
 
-data_filtered = data_filtered[["id_activity","Data","Attività","Settore Orto","Prezzo","Note"]]
+data_filtered = data_filtered[["id_activity","Data","Fornitore","Attività","Prezzo","Note","Prodotto","Quantità"]]
 
 st.dataframe(data_filtered, width='stretch')
 
 # Colonna per selezione
-selected_idx = st.selectbox("Seleziona riga da eliminare", data_filtered.index, format_func=lambda x: f"attività {x} - {data_filtered.loc[x,'Data']} - {data_filtered.loc[x,'Attività']}")
+selected_idx = st.selectbox("Seleziona riga da eliminare", data_filtered.index, format_func=lambda x: f"attività {x} - {data_filtered.loc[x,'Data']} - {data_filtered.loc[x,'Attività']} - {data_filtered.loc[x,'Note']}")
 
 if st.button("❌ Elimina Acquisto selezionato"):
     row_id_att = data_filtered.loc[selected_idx, "id_activity"]
