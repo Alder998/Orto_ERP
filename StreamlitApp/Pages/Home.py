@@ -26,7 +26,7 @@ data_prod = excel.ExcelDataService(fileType="produzione").getExcelData()
 st.subheader("\n\n\nLe tue attività per data")
 options = list(data["Data"].dt.strftime("%Y-%m").unique())
 options.insert(0, "tutte le date")
-opt_att = st.selectbox(label = "Seleziona mese", options=options)
+opt_att = st.selectbox(label = "Seleziona mese", options=options, key="month_pick_att")
 if opt_att != "tutte le date":
     data_filtered = data[pd.to_datetime(data["Data"]).dt.strftime("%Y-%m") == opt_att]
 else:
@@ -45,7 +45,7 @@ st.altair_chart(chart)
 
 # Organize dashboard graphs for product planted and harvested
 st.subheader("\n\n\nI tuoi prodotti")
-opt_prod = st.selectbox(label = "Seleziona una coltivazione", options=data_prod["Prodotto"].dropna().unique())
+opt_prod = st.selectbox(label = "Seleziona una coltivazione", options=data_prod["Prodotto"].dropna().unique(), key="product_pick")
 data_line_chart = copy.deepcopy(data_prod)
 data_line_chart = data_line_chart[data_line_chart["Prodotto"] == opt_prod]
 
@@ -96,7 +96,7 @@ data_purch["Prezzo"] = -data_purch["Prezzo"]
 
 options = list(data_purch["Data"].dt.strftime("%Y-%m").unique())
 options.insert(0, "tutte le date")
-opt_att = st.selectbox(label = "Seleziona mese", options=options)
+opt_att = st.selectbox(label = "Seleziona mese", options=options, key="month_pick_acq")
 if opt_att != "tutte le date":
     data_purch_filtered = data_purch[pd.to_datetime(data_purch["Data"]).dt.strftime("%Y-%m") == opt_att]
 else:

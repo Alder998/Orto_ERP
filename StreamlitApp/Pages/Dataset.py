@@ -27,7 +27,7 @@ else:
 st.dataframe(data_filtered, width='stretch')
 
 # Colonna per selezione
-selected_idx = st.selectbox("Seleziona riga da eliminare", data_filtered.index, format_func=lambda x: f"attività {x} - {data_filtered.loc[x,'Data']} - {data_filtered.loc[x,'Attività']}")
+selected_idx = st.selectbox("Seleziona riga da eliminare", data_filtered.index, format_func=lambda x: f"attività {x} - {data_filtered.loc[x,'Data']} - {data_filtered.loc[x,'Attività']}", key="Prod_Delete")
 
 if st.button("❌ Elimina Produzione selezionata"):
     row_id = data_filtered.loc[selected_idx, "id_activity"]
@@ -63,7 +63,7 @@ else:
 st.dataframe(data_filtered, width='stretch')
 
 # Colonna per selezione
-selected_idx = st.selectbox("Seleziona riga da eliminare", data_filtered.index, format_func=lambda x: f"attività {x} - {data_filtered.loc[x,'Data']} - {data_filtered.loc[x,'Attività']}")
+selected_idx = st.selectbox("Seleziona riga da eliminare", data_filtered.index, format_func=lambda x: f"attività {x} - {data_filtered.loc[x,'Data']} - {data_filtered.loc[x,'Attività']}", key="Att_Delete")
 
 if st.button("❌ Elimina Attività selezionata"):
     row_id_att = data_filtered.loc[selected_idx, "id_activity"]
@@ -94,7 +94,7 @@ data_filtered = data_filtered[["id_activity","Data","Fornitore","Attività","Pre
 st.dataframe(data_filtered, width='stretch')
 
 # Colonna per selezione
-selected_idx = st.selectbox("Seleziona riga da eliminare", data_filtered.index, format_func=lambda x: f"attività {x} - {data_filtered.loc[x,'Data']} - {data_filtered.loc[x,'Attività']} - {data_filtered.loc[x,'Note']}")
+selected_idx = st.selectbox("Seleziona riga da eliminare", data_filtered.index, format_func=lambda x: f"attività {x} - {data_filtered.loc[x,'Data']} - {data_filtered.loc[x,'Attività']} - {data_filtered.loc[x,'Note']}", key="Acq_Delete")
 
 if st.button("❌ Elimina Acquisto selezionato"):
     row_id_att = data_filtered.loc[selected_idx, "id_activity"]
