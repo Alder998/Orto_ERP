@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5fafe37-4342-4ca3-97a3-65923a091bf3" name="Changes" comment="1.3: added a close button to generate a MacOs Version">
+    <list default="true" id="f5fafe37-4342-4ca3-97a3-65923a091bf3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Greenhouse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Orto_app_launcher.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Orto_app_launcher.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamlitApp/App_launcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/App_launcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamlitApp/ExcelService/ExcelDataService.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/ExcelService/ExcelDataService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Purchase.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Purchase.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766961488022</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="1.3: Changed the &quot;//&quot; with &quot;/&quot; for MacOS Execution">
+      <option name="closed" value="true" />
+      <created>1766962118148</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1766962118148</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -251,6 +263,7 @@
     <MESSAGE value="1.1: adding the multichoice on purchases' front-end part (saving is still to be implemented)" />
     <MESSAGE value="1.2: added the saving module for the purchase part (and successfully tested)" />
     <MESSAGE value="1.3: added a close button to generate a MacOs Version" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.3: added a close button to generate a MacOs Version" />
+    <MESSAGE value="1.3: Changed the &quot;//&quot; with &quot;/&quot; for MacOS Execution" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.3: Changed the &quot;//&quot; with &quot;/&quot; for MacOS Execution" />
   </component>
 </project>

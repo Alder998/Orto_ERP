@@ -24,6 +24,7 @@ pages = [
      st.Page("Pages/Home.py", icon="🌱", default=True, title="Il tuo Orto"),
      st.Page("Pages/Diary.py", icon="🖊️", title="Diario"),
      st.Page("Pages/Purchase.py", icon="💰", title="Diario Acquisti"),
+     st.Page("Pages/Greenhouse.py", icon="🐸", title="Terrario"),
      st.Page("Pages/Dataset.py", icon="🧮", title="Dataset"),
 ]
 

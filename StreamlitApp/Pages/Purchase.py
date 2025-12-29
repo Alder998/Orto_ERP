@@ -39,8 +39,8 @@ for i, row in enumerate(st.session_state.rows):
     att, note, prezzo, prod, quant = st.columns(5)
 
     with att:
-        row["Attività"] = st.selectbox(label = f"Attività legata all'acquisto {i+1}", options=["Preparazione Terreno ⛏️",
-                                                "Rincalzatura 🚜", "Trattamenti 🧪", "Seminare 🫘", "Piantare 🌱"])
+        row["Attività"] = st.selectbox(label = f"Tipologia Acquisto {i+1}", options=["Forniture 💦", "Carburante 🛢️", "Attrezzatura ⛏️",
+                                                "Concimi/terriccio 💩", "Trattamenti 🧪", "Sementi 🫘", "Piantine 🌱"])
     with note:
         row["Note"] = st.text_input(f"Note acquisto {i+1}")
 
@@ -48,10 +48,10 @@ for i, row in enumerate(st.session_state.rows):
         row["Prezzo"] = st.number_input(f"Prezzo (€) {i+1}", min_value=0.0, step=0.1, format="%.2f")
 
     with prod:
-        if (row["Attività"] == "Seminare 🫘") | (row["Attività"] == "Piantare 🌱"):
+        if (row["Attività"] == "Sementi 🫘") | (row["Attività"] == "Piantine 🌱"):
             row["Prodotto"] = st.selectbox(label=f"Prodotto {i+1}", options=df_produzione["Prodotto"].dropna().unique(), accept_new_options=True)
     with quant:
-        if (row["Attività"] == "Seminare 🫘") | (row["Attività"] == "Piantare 🌱"):
+        if row["Attività"] == "Piantine 🌱":
             row["Quantita"] = st.number_input(f"Quantità (pz) {i+1}", min_value=0, step=1)
 
     # Append Rows to the list
