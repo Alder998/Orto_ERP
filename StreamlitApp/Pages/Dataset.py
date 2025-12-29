@@ -83,8 +83,8 @@ st.subheader("Consulta i tuoi dati di Acquisto 💰")
 # Add dataset
 data = excel.ExcelDataService(fileType="acquisti").getExcelData()
 data["Data"] = pd.to_datetime(data["Data"]).dt.strftime("%d/%m/%Y")
-att = st.selectbox(label = "Seleziona una attività", options=["Preparazione Terreno ⛏️",
-                                                              "Rincalzatura 🚜", "Trattamenti 🧪","Seminare 🫘","Piantare 🌱"])
+att = st.selectbox(label = "Seleziona una attività", options=["Forniture 💦", "Carburante 🛢️", "Attrezzatura ⛏️",
+                                                              "Concimi/terriccio 💩", "Trattamenti 🧪", "Sementi 🫘", "Piantine 🌱"])
 
 attivita_no_emoji = att.replace(" ⛏️", "").replace(" 💩", "").replace(" 👻", "").replace(" 💦", "").replace(" 🧪", "").replace(" 🔰", "").replace(" 🚜", "").replace(" 🍎", "").replace(" 🫘", "").replace(" 🌱", "")
 data_filtered = data[data["Attività"] == attivita_no_emoji]
