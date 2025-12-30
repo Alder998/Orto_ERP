@@ -13,8 +13,7 @@ df_produzione = excel.ExcelDataService(fileType="produzione").getExcelData()
 # Add all the selectBox
 data = st.date_input("Data",value=date.today())
 att = st.selectbox(label = "Attività", options=["Preparazione Terreno ⛏️", "Irrigazione 💦", "Rincalzatura 🚜",
-                                                "Trattamenti 🧪", "Raccogliere 🍎",
-                                                "Seminare 🫘","Piantare 🌱"])
+                                                "Trattamenti 🧪", "Germinazione 🌼", "Seminare 🫘","Piantare 🌱", "Raccogliere 🍎",])
 
 # Initialize
 # 0. Activities to preparate the field
@@ -63,6 +62,9 @@ elif att == "Trattamenti 🧪":
 elif att == "Rincalzatura 🚜":
     settore = st.number_input("Settore Orto (numero)", min_value=0, step=1)
     tempo = st.number_input("Tempo impiegato (ore)", min_value=0.0, step=0.1, format="%.1f")
+elif att == "Germinazione 🌼":
+    settore = st.number_input("Settore Orto (numero)", min_value=0, step=1)
+    prod = st.selectbox(label = "Prodotto", options=df_produzione["Prodotto"].dropna().unique(), accept_new_options=True)
 
 tempo = st.selectbox(label = "Tempo Atmosferico", options=["Sereno", "nuvole sparse", "nuvoloso", "pioggia"])
 note = st.text_area("Note", height=50)

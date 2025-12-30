@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5fafe37-4342-4ca3-97a3-65923a091bf3" name="Changes" comment="1.4: Changed purchases params">
+    <list default="true" id="f5fafe37-4342-4ca3-97a3-65923a091bf3" name="Changes" comment="1.5.1: Updated purchase selectbox with new functional values">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Orto_app_launcher.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Orto_app_launcher.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamlitApp/ExcelService/ExcelDataService.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/ExcelService/ExcelDataService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Diary.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Diary.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +252,23 @@
       <option name="project" value="LOCAL" />
       <updated>1767031956381</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="1.5: Added different keys to allow it to run on MacOS">
+      <option name="closed" value="true" />
+      <created>1767038582499</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1767038582499</updated>
+    </task>
+    <task id="LOCAL-00017" summary="1.5.1: Updated purchase selectbox with new functional values">
+      <option name="closed" value="true" />
+      <created>1767038933294</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1767038933294</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -271,6 +287,8 @@
     <MESSAGE value="1.3: added a close button to generate a MacOs Version" />
     <MESSAGE value="1.3: Changed the &quot;//&quot; with &quot;/&quot; for MacOS Execution" />
     <MESSAGE value="1.4: Changed purchases params" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.4: Changed purchases params" />
+    <MESSAGE value="1.5: Added different keys to allow it to run on MacOS" />
+    <MESSAGE value="1.5.1: Updated purchase selectbox with new functional values" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.5.1: Updated purchase selectbox with new functional values" />
   </component>
 </project>

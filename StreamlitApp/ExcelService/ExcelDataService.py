@@ -18,7 +18,7 @@ class ExcelDataService:
         # Process the data from dict to dataFrame row
         data = pd.DataFrame([data])
         # Remove Emoji
-        data["Attività"] = data["Attività"].str.replace(" ⛏️", "").str.replace(" 💩", "").str.replace(" 👻", "").str.replace(" 💦", "").str.replace(" 🧪", "").str.replace(" 🔰","").str.replace(" 🚜", "").str.replace(" 🍎", "").str.replace(" 🫘", "").str.replace(" 🌱", "").str.replace(" 🛢️", "")
+        data["Attività"] = data["Attività"].str.replace(" ⛏️", "").str.replace(" 💩", "").str.replace(" 👻", "").str.replace(" 💦", "").str.replace(" 🧪", "").str.replace(" 🔰","").str.replace(" 🚜", "").str.replace(" 🍎", "").str.replace(" 🫘", "").str.replace(" 🌱", "").str.replace(" 🛢️", "").str.replace(" 🌼", "")
 
         # load the data
         existing_data = pd.read_excel(user.userGetter(fileType=self.fileType))
