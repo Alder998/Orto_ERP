@@ -20,6 +20,7 @@ att = st.selectbox(label = "Attività", options=["Preparazione Terreno ⛏️", 
 settore = None
 mq = None
 tempo = None
+tempo_imp = None
 att1 = None
 att2 = None
 att3 = None
@@ -29,7 +30,7 @@ att5 = None
 prod = None
 quantita = None
 peso = None
-prezzo = None
+prezzo_stima = None
 prod_chimico = None
 acqua_utilizzata = None
 
@@ -53,17 +54,16 @@ elif att == "Raccogliere 🍎":
     settore = st.number_input("Settore Orto (numero)", min_value=0, step=1)
     prod = st.selectbox(label = "Prodotto", options=df_produzione["Prodotto"].dropna().unique(), accept_new_options=True)
     peso = st.number_input("Peso (kg)", min_value=0.0, step=0.1, format="%.2f")
+    prezzo_stima = st.number_input("Prezzo stimato (€)", min_value=0.0, step=0.1, format="%.2f")
 elif att == "Trattamenti 🧪":
     settore = st.number_input("Settore Orto (numero)", min_value=0, step=1)
     prod_chimico = st.selectbox(label = "Prodotto chimico utilizzato", options=df_produzione[df_produzione["Attività"]=="Trattamenti"]["Prodotto chimico"].dropna().unique(), accept_new_options=True)
     prod = st.selectbox(label = "Prodotto", options=df_produzione["Prodotto"].unique(), accept_new_options=True)
-    tempo = st.number_input("Tempo impiegato (ore)", min_value=0.0, step=0.1, format="%.1f")
-    #prezzo = st.number_input("Prezzo (€) del trattamento", min_value=0.0, step=0.1, format="%.2f")
+    tempo_imp = st.number_input("Tempo impiegato (ore)", min_value=0.0, step=0.1, format="%.1f")
 elif att == "Rincalzatura 🚜":
     settore = st.number_input("Settore Orto (numero)", min_value=0, step=1)
-    tempo = st.number_input("Tempo impiegato (ore)", min_value=0.0, step=0.1, format="%.1f")
+    tempo_imp = st.number_input("Tempo impiegato (ore)", min_value=0.0, step=0.1, format="%.1f")
 elif att == "Germinazione 🌼":
-    settore = st.number_input("Settore Orto (numero)", min_value=0, step=1)
     prod = st.selectbox(label = "Prodotto", options=df_produzione["Prodotto"].dropna().unique(), accept_new_options=True)
 
 tempo = st.selectbox(label = "Tempo Atmosferico", options=["Sereno", "nuvole sparse", "nuvoloso", "pioggia"])
@@ -78,7 +78,7 @@ if st.button("💾 Salva"):
             "Settore Orto": settore,
 
             "mq": mq,
-            "tempo impiegato": tempo,
+            "tempo impiegato": tempo_imp,
             "Zappare": att1,
             "Concimare": att2,
             "Paciamatura": att3,
@@ -102,6 +102,7 @@ if st.button("💾 Salva"):
             "Prodotto": prod,
             "Quantità": quantita,
             "Peso": peso,
+            "Prezzo stimato": prezzo_stima,
             "Prodotto chimico": prod_chimico,
 
             "Tempo atmosferico": tempo,

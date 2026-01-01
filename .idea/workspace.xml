@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5fafe37-4342-4ca3-97a3-65923a091bf3" name="Changes" comment="1.5.1: Updated purchase selectbox with new functional values">
+    <list default="true" id="f5fafe37-4342-4ca3-97a3-65923a091bf3" name="Changes" comment="1.6: added the flowering part to the Diary Page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Orto_app_launcher.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Orto_app_launcher.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamlitApp/ExcelService/ExcelDataService.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/ExcelService/ExcelDataService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Dataset.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Diary.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Diary.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamlitApp/Pages/Greenhouse.py" beforeDir="false" afterPath="$PROJECT_DIR$/StreamlitApp/Pages/Greenhouse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/UserService.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserService.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,7 +271,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767038933294</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="1.6: added the flowering part to the Diary Page">
+      <option name="closed" value="true" />
+      <created>1767087859974</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1767087859974</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -289,6 +300,7 @@
     <MESSAGE value="1.4: Changed purchases params" />
     <MESSAGE value="1.5: Added different keys to allow it to run on MacOS" />
     <MESSAGE value="1.5.1: Updated purchase selectbox with new functional values" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.5.1: Updated purchase selectbox with new functional values" />
+    <MESSAGE value="1.6: added the flowering part to the Diary Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.6: added the flowering part to the Diary Page" />
   </component>
 </project>

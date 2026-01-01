@@ -37,7 +37,7 @@ class ExcelDataService:
         # Save to the existing dir
         new_data.to_excel(user.userGetter(fileType=self.fileType), index=False)
         # Save a copy for backup
-        new_data.to_excel(user.userGetter(fileType=self.fileType).replace(".xlsx", "") + "_backup.xlsx", index=False)
+        #new_data.to_excel(user.userGetter(fileType=self.fileType).replace(".xlsx", "") + "_backup.xlsx", index=False)
 
         return new_data
 
